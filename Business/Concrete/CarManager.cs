@@ -14,6 +14,21 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
+
+        public void Add(Car car)
+        {
+            Console.WriteLine("Add Car çalıştı");
+            if (car.DailyPrice > 0 && car.Description.Length > 2)
+                _carDal.Add(car);
+            else
+                Console.WriteLine("Günlük fiyat 0'dan büyük tanımlama 2 karakterden uzun olmalıdır.");
+        }
+
+        public void Delete(Car car)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
@@ -37,6 +52,11 @@ namespace Business.Concrete
         public List<Car> GetAllByModelYear(int min, int max)
         {
             return _carDal.GetAll(p => p.ModelYear >= min && p.ModelYear <= max);
+        }
+
+        public void Update(Car car)
+        {
+            throw new NotImplementedException();
         }
     }
 }

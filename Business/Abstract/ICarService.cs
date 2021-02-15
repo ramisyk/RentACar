@@ -12,5 +12,9 @@ namespace Business.Abstract
         List<Car> GetAllByColorId(int colorId);
         List<Car> GetAllByModelYear(int min, int max);
         List<Car> GetAllByDailyPrice(int min, int max);
+
+        void Add(Car car);
+        void Update(Car car);
+        void Delete(Car car);
     }
 }
