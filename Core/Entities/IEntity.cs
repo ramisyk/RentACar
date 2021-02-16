@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities.Abstract
+namespace Core.Entities
 {
     //Classes that implemented this interface are entity -so database object table or joined table-
     public interface IEntity
