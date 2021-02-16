@@ -10,7 +10,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //ListCarsTest();
+            ListCarsTest();
             //AddCarTest();
             //ListBrandTest();
             //ListColorTest();
@@ -45,9 +45,9 @@ namespace ConsoleUI
         private static void ListCarsTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var car in carManager.GetAll())
+            foreach (var car in carManager.GetCarDetails())
             {
-                Console.WriteLine(car.Description + "'s Daily Price : " + car.DailyPrice.ToString());
+                Console.WriteLine(car.CarName + "-" + car.BrandName + "-" + car.ColorName + "-" + car.DailyPrice);
             }
         }
     }
