@@ -20,7 +20,6 @@ namespace Business.Concrete
 
         public IResult Add(Car car)
         {
-            Console.WriteLine("Add Car çalıştı");
             if (car.DailyPrice > 0 && car.Description.Length > 2)
             {
                 _carDal.Add(car);
@@ -32,47 +31,47 @@ namespace Business.Concrete
         public IResult Delete(Car car)
         {
             _carDal.Delete(car);
-            return new SuccessResult("Araç Silindi");
+            return new SuccessResult(Messages.CarDeleted);
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            return _carDal.GetAll();
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarsListed);
         }
 
-        public List<Car> GetAllByBrandId(int brandId)
+        public IDataResult<List<Car>> GetAllByBrandId(int brandId)
         {
-            return _carDal.GetAll(c => c.BrandId == brandId);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.BrandId == brandId), Messages.CarsListedByBrandId);
         }
 
-        public List<Car> GetAllByColorId(int colorId)
+        public IDataResult<List<Car>> GetAllByColorId(int colorId)
         {
-            return _carDal.GetAll(c => c.ColorId == colorId);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.ColorId == colorId), Messages.CarsListedByColorId);
         }
 
-        public List<Car> GetAllByDailyPrice(int min, int max)
+        public IDataResult<List<Car>> GetAllByDailyPrice(int min, int max)
         {
-            return _carDal.GetAll(c => c.DailyPrice >= min && c.DailyPrice <= max);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.DailyPrice >= min && c.DailyPrice <= max), Messages.CarsListedByDailyPrice);
         }
 
-        public List<Car> GetAllByModelYear(int min, int max)
+        public IDataResult<List<Car>> GetAllByModelYear(int min, int max)
         {
-            return _carDal.GetAll(c => c.ModelYear >= min && c.ModelYear <= max);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.ModelYear >= min && c.ModelYear <= max), Messages.CarsListedByModelYear);
         }
-        public Car GetByBrandId(int brandId)
+        public IDataResult<Car> GetById(int carId)
         {
-            return _carDal.Get(c => c.BrandId == brandId);
+            return new SuccessDataResult<Car>(_carDal.Get(c => c.CarId == carId), Messages.CarReturnedById);
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-            return _carDal.GetCarDetails();
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(), Messages.CarDetailsListed);
         }
 
         public IResult Update(Car car)
         {
             _carDal.Update(car);
-            return new SuccessResult("Araç Güncellendi");
+            return new SuccessResult(Messages.CarUpdated);
         }
     }
 }
