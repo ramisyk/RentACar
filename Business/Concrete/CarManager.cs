@@ -37,22 +37,26 @@ namespace Business.Concrete
 
         public List<Car> GetAllByBrandId(int brandId)
         {
-            return _carDal.GetAll(p => p.BrandId == brandId);
+            return _carDal.GetAll(c => c.BrandId == brandId);
         }
 
         public List<Car> GetAllByColorId(int colorId)
         {
-            return _carDal.GetAll(p => p.ColorId == colorId);
+            return _carDal.GetAll(c => c.ColorId == colorId);
         }
 
         public List<Car> GetAllByDailyPrice(int min, int max)
         {
-            return _carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max);
+            return _carDal.GetAll(c => c.DailyPrice >= min && c.DailyPrice <= max);
         }
 
         public List<Car> GetAllByModelYear(int min, int max)
         {
-            return _carDal.GetAll(p => p.ModelYear >= min && p.ModelYear <= max);
+            return _carDal.GetAll(c => c.ModelYear >= min && c.ModelYear <= max);
+        }
+        public Car GetByBrandId(int brandId)
+        {
+            return _carDal.Get(c => c.BrandId == brandId);
         }
 
         public List<CarDetailDto> GetCarDetails()
