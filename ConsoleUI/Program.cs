@@ -14,6 +14,21 @@ namespace ConsoleUI
             //AddCarTest();
             //ListBrandTest();
             //ListColorTest();
+            //AddCustomerTest();
+            //CarManager carManager = new CarManager(new EfCarDal());
+            //foreach (var car in carManager.GetRentalDetails().Data)
+            //{
+            //    Console.Write(car.CarName + "-" + car.RentDate + "-");
+                
+            //}
+
+        }
+
+        private static void AddCustomerTest()
+        {
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            Customer customer = new Customer { UserId = 1, CompanyName = "Abc Haber" };
+            customerManager.Add(customer);
         }
 
         private static void ListColorTest()
@@ -39,6 +54,7 @@ namespace ConsoleUI
             CarManager carManager = new CarManager(new EfCarDal());
             Car car = new Car { BrandId = 4, ColorId = 2, DailyPrice = 720, ModelYear = 2021, Description = "NewCar" };
             carManager.Add(car);
+            Console.WriteLine(carManager.Add(car).Message);
             ListCarsTest();
         }
 
