@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    class EfRentalDal : EfEntityRepositoryBase<Rental, CarsDbContext>, IRentalDal
+    public class EfRentalDal : EfEntityRepositoryBase<Rental, CarsDbContext>, IRentalDal
     {
     }
 }
