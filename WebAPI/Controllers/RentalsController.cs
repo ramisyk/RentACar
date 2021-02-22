@@ -19,9 +19,9 @@ namespace WebAPI.Controllers
             _rentalService = rentalService;
         }
         [HttpPost("add")]
-        public IActionResult Add(Car car)
+        public IActionResult Add(Rental rental)
         {
-            var result = _rentalService.RentACar(car);
+            var result = _rentalService.Add(rental);
             if (result.Success)
             {
                 return Ok(result);
