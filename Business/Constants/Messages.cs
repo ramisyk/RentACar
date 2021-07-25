@@ -33,18 +33,22 @@ namespace Business.Constants
         public static string ColorsListedById = "Renk ID için Gönderildi";
         //Customer
         public static string CustomerAdded = "Müşteri Eklendi";
-        internal static string CustomerDeleted;
-        internal static string CustomerListed;
-        internal static string CustomerUpdated;
-        internal static string CustomerReturnedById;
-        internal static string RentalAdded;
-        internal static string RentalError;
-        internal static string RentalDeleted;
-        internal static string RentalUpdated;
-        internal static string UserAdded;
-        internal static string UserDeleted;
-        internal static string UsersListed;
-        internal static string UserUpdated;
-        internal static string UserReturnedById;
+        public static string CustomerDeleted;
+        public static string CustomerListed;
+        public static string CustomerUpdated;
+        public static string CustomerReturnedById;
+        public static string RentalAdded;
+        public static string RentalError;
+        public static string RentalDeleted;
+        public static string RentalUpdated;
+        public static string UserAdded;
+        public static string UserDeleted;
+        public static string UsersListed;
+        public static string UserUpdated;
+        public static string UserReturnedById;
+        //Images
+        public static string ImageAdded;
+        public static string ImageDeleted;
+        public static string ImagesListed;
     }
 }

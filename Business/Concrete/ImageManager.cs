@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -10,72 +12,31 @@ namespace Business.Concrete
 {
     public class ImageManager : IImageService
     {
-        public IResult Add(Car car)
+        IImageDal _imageDal;
+
+        public ImageManager(IImageDal imageDal)
         {
-            throw new NotImplementedException();
+            _imageDal = imageDal;
         }
 
         public IResult Add(Image image)
         {
-            throw new NotImplementedException();
-        }
-
-        public IResult Delete(Car car)
-        {
-            throw new NotImplementedException();
+            _imageDal.Add(image);
+            return new SuccessResult(Messages.ImageAdded);
         }
 
         public IResult Delete(Image image)
         {
-            throw new NotImplementedException();
+            _imageDal.Delete(image);
+            return new SuccessResult(Messages.ImageDeleted);
         }
 
-        public IDataResult<List<Car>> GetAll()
+        public IDataResult<List<Image>> GetAll()
         {
-            throw new NotImplementedException();
-        }
-
-        public IDataResult<List<Car>> GetAllByBrandId(int brandId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDataResult<List<Car>> GetAllByColorId(int colorId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDataResult<List<Car>> GetAllByDailyPrice(int min, int max)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDataResult<List<Car>> GetAllByModelYear(int min, int max)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDataResult<Car> GetById(int carId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDataResult<List<CarDetailDto>> GetCarDetails()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IResult Update(Car car)
-        {
-            throw new NotImplementedException();
+              return new SuccessDataResult<List<Image>>(_imageDal.GetAll(), Messages.ImagesListed)  
         }
 
         public IResult Update(Image image)
-        {
-            throw new NotImplementedException();
-        }
-
-        IDataResult<List<Image>> IImageService.GetAll()
         {
             throw new NotImplementedException();
         }
