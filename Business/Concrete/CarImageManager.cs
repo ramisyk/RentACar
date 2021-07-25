@@ -21,6 +21,7 @@ namespace Business.Concrete
 
         public IResult Add(CarImage image)
         {
+            image.Date = DateTime.Now;
             _imageDal.Add(image);
             return new SuccessResult(Messages.ImageAdded);
         }
