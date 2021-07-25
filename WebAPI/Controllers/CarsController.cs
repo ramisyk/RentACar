@@ -17,8 +17,8 @@ namespace WebAPI.Controllers
     {
         //dependency on abstract so loosely coupled
         //add singleton for not new() for service and manager
-        ICarService _carService;
-        public CarsController(ICarService carService)
+        IImageService _carService;
+        public CarsController(IImageService carService)
         {
             _carService = carService;
         }
