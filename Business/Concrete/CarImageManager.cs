@@ -10,33 +10,33 @@ using System.Text;
 
 namespace Business.Concrete
 {
-    public class ImageManager : IImageService
+    public class CarImageManager : ICarImageService
     {
-        IImageDal _imageDal;
+        ICarImageDal _imageDal;
 
-        public ImageManager(IImageDal imageDal)
+        public CarImageManager(ICarImageDal imageDal)
         {
             _imageDal = imageDal;
         }
 
-        public IResult Add(Image image)
+        public IResult Add(CarImage image)
         {
             _imageDal.Add(image);
             return new SuccessResult(Messages.ImageAdded);
         }
 
-        public IResult Delete(Image image)
+        public IResult Delete(CarImage image)
         {
             _imageDal.Delete(image);
             return new SuccessResult(Messages.ImageDeleted);
         }
 
-        public IDataResult<List<Image>> GetAll()
+        public IDataResult<List<CarImage>> GetAll()
         {
-              return new SuccessDataResult<List<Image>>(_imageDal.GetAll(), Messages.ImagesListed)  
+            return new SuccessDataResult<List<CarImage>>(_imageDal.GetAll(), Messages.ImagesListed);
         }
 
-        public IResult Update(Image image)
+        public IResult Update(CarImage image)
         {
             throw new NotImplementedException();
         }
