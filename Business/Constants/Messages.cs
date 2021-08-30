@@ -53,5 +53,11 @@ namespace Business.Constants
         public static string ImagesListed;
 
         public static string AuthorizationDenied = "Yetkilendirme Hatası!";
+        public static string UserRegistered = "Kayıt Olundu";
+        public static string UserNotFound = "Kullanıcı Bulunamadı";
+        public static string PasswordError = "Hatalı Parola";
+        public static string SuccessfulLogin = "Giriş Başarılı";
+        public static string UserAlreadyExists = "Kullanıcı zaten mevcut";
+        public static string AccessTokenCreated = "Token Oluşturuldu";
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Entities.Concrete;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,8 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        
+        /*
         [HttpDelete("delete")]
         public IActionResult Delete(User user)
         {
@@ -41,6 +44,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         [HttpPut("update")]
+        
         public IActionResult Update(User user)
         {
             var result = _userService.Update(user);
@@ -50,5 +54,6 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        */
     }
 }
